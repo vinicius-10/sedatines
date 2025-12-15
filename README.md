@@ -16,8 +16,8 @@
 - [Entidades iniciais](#-entidades-iniciais)
 - [Funcionalidades Planejadas](#-funcionalidades-planejadas)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Código](https://github.com/vinicius-10/sedatines/tree/main/aplicacao)
-- [Documetação](https://github.com/vinicius-10/sedatines/blob/main/documentacao/documentacao.md)
+- [Código](./aplicacao)
+- [Documetação](./documentacao/documentacao.md)
 
 ---
 
