@@ -1,24 +1,61 @@
+# Sedatines Archives
 
-# Sedatines 
-> Projeto desenvolvido para aplicar conceitos de docker e laravel.
+> Projeto desenvolvido para aplicação prática de Docker e Laravel.
+
 <div align="left">
-  <img src="https://img.shields.io/badge/Status-Em progresso-brightgreen" alt="Status">
-  <img src="https://img.shields.io/badge/Linguagem-PHP-orange" alt="Linguagem">
-  <img src="https://img.shields.io/badge/Interface-Web-orange" alt="Web">
+  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow" alt="Status">
+  <img src="https://img.shields.io/badge/Backend-Laravel_11-red" alt="Laravel">
+  <img src="https://img.shields.io/badge/Infra-Docker-blue" alt="Docker">
+  <img src="https://img.shields.io/badge/Linguagem-PHP_8.2+-purple" alt="PHP">
 </div>
 
+## 📑 Sumário
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Objetivo](#-objetivo)
+- [Público-Alvo](#-público-alvo)
+- [Entidades iniciais](#-entidades-iniciais)
+- [Funcionalidades Planejadas](#-funcionalidades-planejadas)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 
-## Sumário
-| O repositório |
-|:--------|
-| [Sobre](#Sobre) |
-| [Requisitos Funcionais](https://github.com/vinicius-10/sedatines) |
-| [Requisitos Não Funcionais](https://github.com/vinicius-10/sedatines) |
-| [Histórias de Usuário](https://github.com/vinicius-10/sedatines) |
-| [Protótipo de Alta Fidelidade](https://github.com/vinicius-10/sedatines) |
-| [Requisitos de Sistema](https://github.com/vinicius-10/sedatines) |
-| [Código Fonte](https://github.com/vinicius-10/sedatines/tree/main/aplicacao) |
+---
 
-## Sobre
+## 👻 Sobre o Projeto
 
-O Sedatines é uma aplicação web destinada a catalogar, preservar e exibir as criaturas e entidades sobrenaturais. O sistema serve tanto como uma vitrine pública para leitores quanto como uma ferramenta de gestão de lore (história) e balanceamento de atributos (RPG) para os criadores
+**Sedatines** é originalmente o nome do grupo de entidades sobrenaturais criado por mim e meus amigos. O universo gira em torno de três figuras centrais, mas expandiu-se para um ecossistema mais complexo de lore e RPG.
+
+Esta aplicação web foi projetada para ser a fonte oficial da verdade (Single Source of Truth) sobre este universo, detalhando histórias, imagens e atributos de combate.
+
+## 🎯 Objetivo
+
+O objetivo principal é catalogar, preservar e exibir as criaturas deste universo. O sistema atua em duas frentes:
+1. **Vitrine Pública:** Para leitores e interessados na história.
+2. **Ferramenta de Gestão:** Para os criadores manterem a consistência do mundo e realizarem o balanceamento de atributos (RPG) das entidades.
+
+## 👥 Público-Alvo
+
+* **Criadores de Conteúdo (Lore Masters):** Nós, que trabalhamos na expansão deste universo.
+* **Comunidade:** Leitores ou jogadores interessados em criar suas próprias entidades (OCs) dentro das regras do universo Sedatines.
+
+## 💀 Entidades iniciais
+
+O sistema foi fundado baseando-se nas três entidades originais:
+1. **Kai Demon Red**
+2. **The Shadow**
+3. **Myrron Run**
+
+## 🚀 Funcionalidades Planejadas
+
+- [ ] **Catálogo de Criaturas:** Listagem visual com filtros.
+- [ ] **Sistema de Atributos:** Exibição de status de RPG (Força, Agilidade, etc.).
+- [ ] **Lore Detalhada:** Páginas dedicadas à história de cada ser.
+- [ ] **Painel Administrativo:** Para criação e edição de novas entidades.
+
+## 🛠 Tecnologias Utilizadas
+
+Este projeto faz parte do meu portfólio acadêmico e utiliza as seguintes tecnologias:
+
+* **Linguagem:** PHP 8.x
+* **Framework:** Laravel 11
+* **Ambiente:** Docker (Sail) & WSL2
+* **Banco de Dados:** MySQL
+* **Frontend:** Blade Templates
