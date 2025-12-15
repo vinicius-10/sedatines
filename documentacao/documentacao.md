@@ -1,10 +1,22 @@
-## Estrutura
-A documentação desse prjeto foi construido para auxiliar no desenvolviemnto e entendimento do projeto
+# 📚 Documentação do Projeto Sedatines
 
+Bem-vindo à central de documentação do Sedatines. Aqui estão detalhadas as regras de negócio, requisitos e decisões técnicas que guiam o desenvolvimento deste projeto.
 
-## Sumario
-- [Requisitos Funcionais]()
+> Esta pasta contém a especificação técnica. Para ver o código-fonte ou o guia de instalação, volte para a [Raiz do Projeto](../README.md).
 
+## 🗂 Estrutura da Documentação
 
-## Inicio
-[Pagina inicial](https://github.com/vinicius-10/sedatines/tree/main?tab=readme-ov-file#-Sum%C3%A1rio)
+A documentação está dividida nos seguintes módulos:
+
+| Documento | Descrição |
+|:----------|:----------|
+| [Requisitos Funcionais](./Requisitos-funcionais.md) | O que o sistema deve fazer (Regras de Negócio). |
+| [Requisitos Não-Funcionais](./Requisitos-nao-funcionais.md) | Restrições técnicas (Performance, Segurança, Stack). |
+| [Banco de Dados](./Banco-de-dados.md) | Diagramas ER e Dicionário de Dados. |
+| [Design & UI](./Design.md) | Protótipos e Guia de Estilo. |
+
+---
+
+## 📌 Links Rápidos
+* [Voltar para o Início](../README.md)
+* [Ver Código Fonte](../aplicacao/)
