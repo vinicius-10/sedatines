@@ -21,7 +21,7 @@
 
 ## 👻 Sobre o Projeto
 
-**Sedatines** é originalmente o nome do grupo de entidades sobrenaturais criado por mim e meus amigos. O universo gira em torno de três figuras centrais, mas expandiu-se para um ecossistema mais complexo de lore e RPG.
+**Sedatines** é originalmente o nome do grupo de entidades sobrenaturais criado por mim e meus amigos. O universo gira em torno de três figuras centrais, mas expandiu-se para um ecossistema mais complexo.
 
 Esta aplicação web foi projetada para ser a fonte oficial da verdade (Single Source of Truth) sobre este universo, detalhando histórias, imagens e atributos de combate.
 
@@ -29,12 +29,12 @@ Esta aplicação web foi projetada para ser a fonte oficial da verdade (Single S
 
 O objetivo principal é catalogar, preservar e exibir as criaturas deste universo. O sistema atua em duas frentes:
 1. **Vitrine Pública:** Para leitores e interessados na história.
-2. **Ferramenta de Gestão:** Para os criadores manterem a consistência do mundo e realizarem o balanceamento de atributos (RPG) das entidades.
+2. **Ferramenta de Gestão:** Para os criadores manterem a consistência do mundo e realizarem o balanceamento das habilidades das entidades.
 
 ## 👥 Público-Alvo
 
 * **Criadores de Conteúdo (Lore Masters):** Nós, que trabalhamos na expansão deste universo.
-* **Comunidade:** Leitores ou jogadores interessados em criar suas próprias entidades (OCs) dentro das regras do universo Sedatines.
+* **Comunidade:** Leitores ou jogadores interessados em criar suas próprias entidades (OCs) dentro das regras do universo dos Sedatines.
 
 ## 💀 Entidades iniciais
 
@@ -46,16 +46,16 @@ O sistema foi fundado baseando-se nas três entidades originais:
 ## 🚀 Funcionalidades Planejadas
 
 - [ ] **Catálogo de Criaturas:** Listagem visual com filtros.
-- [ ] **Sistema de Atributos:** Exibição de status de RPG (Força, Agilidade, etc.).
+- [ ] **Sistema de Atributos:** Exibição de status como Força, Agilidade, etc.
 - [ ] **Lore Detalhada:** Páginas dedicadas à história de cada ser.
 - [ ] **Painel Administrativo:** Para criação e edição de novas entidades.
 
 ## 🛠 Tecnologias Utilizadas
 
-Este projeto faz parte do meu portfólio acadêmico e utiliza as seguintes tecnologias:
+Este projeto utiliza as seguintes tecnologias:
 
-* **Linguagem:** PHP 8.x
-* **Framework:** Laravel 11
+* **Linguagem:** PHP 8.4
+* **Framework:** Laravel 12
 * **Ambiente:** Docker (Sail) & WSL2
 * **Banco de Dados:** MySQL
 * **Frontend:** Blade Templates
