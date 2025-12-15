@@ -11,7 +11,7 @@
 ## Sumário
 | O repositório |
 |:--------|
-| [Sobre](# Sobre) |
+| [Sobre](#Sobre) |
 | [Requisitos Funcionais](https://github.com/vinicius-10/sedatines) |
 | [Requisitos Não Funcionais](https://github.com/vinicius-10/sedatines) |
 | [Histórias de Usuário](https://github.com/vinicius-10/sedatines) |
