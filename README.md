@@ -1,8 +1,13 @@
 
-# Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
-
-### Passo a passo
+# Sedatines 
+> Projeto desenvolvido para aplicar conceitos de docker e laravel.
+<div align="left">
+  <img src="https://img.shields.io/badge/Status-Em progreço-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/Linguagem-PHP-orange" alt="Linguagem">
+  <img src="https://img.shields.io/badge/Hardware-Arduino-blue" alt="Hardware">
+  <img src="https://img.shields.io/badge/Interface-Web-orange" alt="Web">
+</div>
+### O que é 
 Clone Repositório
 ```sh
 git clone -b laravel-12-with-php8.4 https://github.com/especializati/setup-docker-laravel.git app-laravel
