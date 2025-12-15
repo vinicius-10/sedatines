@@ -17,6 +17,5 @@ A documentação está dividida nos seguintes módulos:
 
 ---
 
-## 📌 Links Rápidos
+## 🏠 Inicio
 * [Voltar para o Início](../README.md)
-* [Ver Código Fonte](../aplicacao/)
