@@ -35,7 +35,7 @@ Funcionalidades exclusivas para usuários com a flag `is_admin`.
 Funcionalidades para usuários autenticados (Membros da Comunidade).
 
 | ID | Título | Descrição | Prioridade | Status |
-|:---|:----------|:-----------|:-------|
+|:---|:----------|:-----------|:-----------|:---|:-------|
 | **RF006** | **Cadastro de Entidade**  |O usuário deve poder criar uma nova entidade informando: Nome, Descrição (Lore), Imagem de Capa e Atributos de RPG. | | Alta | [ ] |
 | **RF007** | **Validação de Limites** | O sistema deve bloquear a criação de novas entidades se o usuário atingir o limite do seu Título atual (`user.entities_count >= title.limit`). | | Alta | [ ] |
 | **RF008** | **Distribuição de Atributos** | O sistema deve validar se a soma dos atributos da entidade não ultrapassa o limite permitido pelo Título do usuário. | | Média | [ ] |
@@ -47,7 +47,7 @@ Funcionalidades para usuários autenticados (Membros da Comunidade).
 Funcionalidades acessíveis a qualquer pessoa sem login.
 
 | ID | Título | Descrição | Prioridade | Status |
-|:---|:----------|:-----------|:-------|
+|:---|:----------|:-----------|:-----------|:---|:-------|
 | **RF011** | **Galeria de Entidades** | Listagem das entidades com status `published`, com paginação. | | Alta | [ ] |
 | **RF012** | **Filtros e Busca** | Permitir buscar por nome ou filtrar por Categoria/Autor. | | Média | [ ] |
 | **RF013** | **Visualização Detalhada** | Página única da entidade exibindo Lore completa, Autor (com seu Título) e Gráfico de Atributos. | | Alta | [ ] |
@@ -56,7 +56,7 @@ Funcionalidades acessíveis a qualquer pessoa sem login.
 ## 4. Requisitos de Sistema
 
 | ID | Título | Descrição | Prioridade | Status |
-|:---|:----------|:-----------|:-------|
+|:---|:----------|:-----------|:-----------|:---|:-------|
 | **RF015** | **Log de Atividades** | Registrar quem criou ou alterou uma entidade (para auditoria). | | Baixa | [ ] |
 
 ## Voltar
