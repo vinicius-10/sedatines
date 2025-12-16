@@ -3,10 +3,10 @@
 Este documento lista todas as funcionalidades que o sistema deve possuir para atender aos objetivos do projeto.
 Foi divido em 4 grupos, onde as 1,2 e 3 contem os requiots que cada usuario do sitema irá interagir, e a 4 geral do sistema.
 
--[1. Administração](#1.-Módulo-Administrativo-(Dashboard))
--[2. Criadores](#2.-Módulo-do-Criador-(Área-Logada))
--[3. Visitante](#3.-Módulo-Público-(Visitante))
--[4. Sistema](#Requisitos-de-Sistema)
+- [1. Administração](#1.-Módulo-Administrativo-(Dashboard))
+- [2. Criadores](#2.-Módulo-do-Criador-(Área-Logada))
+- [3. Visitante](#3.-Módulo-Público-(Visitante))
+- [4. Sistema](#Requisitos-de-Sistema)
 
 > **Legenda de Prioridade:**
 > * **Alta:** Essencial para o MVP (Mínimo Produto Viável).
