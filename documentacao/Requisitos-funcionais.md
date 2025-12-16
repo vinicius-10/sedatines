@@ -6,7 +6,7 @@ Foi divido em 4 grupos, onde as 1,2 e 3 contem os requiots que cada usuario do s
 - [1. Administração](#1.-Módulo-Administrativo-(Dashboard))
 - [2. Criadores](#2.-Módulo-do-Criador-(Área-Logada))
 - [3. Visitante](#3.-Módulo-Público-(Visitante))
-- [4. Sistema](#Requisitos-de-Sistema)
+- [4. Sistema](#4.-Requisitos-de-Sistema)
 
 > **Legenda de Prioridade:**
 > * **Alta:** Essencial para o MVP (Mínimo Produto Viável).
