@@ -1,6 +1,12 @@
 # 📋 Requisitos Funcionais - Sedatines
 
 Este documento lista todas as funcionalidades que o sistema deve possuir para atender aos objetivos do projeto.
+Foi divido em 4 grupos, onde as 1,2 e 3 contem os requiots que cada usuario do sitema irá interagir, e a 4 geral do sistema.
+
+-[1. Administração](#1.-Módulo-Administrativo-(Dashboard))
+-[2. Criadores](#2.-Módulo-do-Criador-(Área-Logada))
+-[3. Visitante](#3.-Módulo-Público-(Visitante))
+-[4. Sistema](#Requisitos-de-Sistema)
 
 > **Legenda de Prioridade:**
 > * **Alta:** Essencial para o MVP (Mínimo Produto Viável).
@@ -44,7 +50,7 @@ Funcionalidades acessíveis a qualquer pessoa sem login.
 | **RF013** | **Visualização Detalhada:** Página única da entidade exibindo Lore completa, Autor (com seu Título) e Gráfico de Atributos. | Alta | [ ] |
 | **RF014** | **Autenticação:** Sistema de Login e Registro de novos usuários. | Alta | [ ] |
 
-## 4. Requisitos de Sistema (Back-end)
+## 4. Requisitos de Sistema
 
 | ID | Descrição | Prioridade | Status |
 |:---|:----------|:-----------|:-------|
