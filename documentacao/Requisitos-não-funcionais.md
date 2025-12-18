@@ -69,5 +69,5 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 
 ---
 
-## 🔗 Links Úteis
+## 📄 Documentação
 [Voltar para o Índice da Documentação](./README.md)
