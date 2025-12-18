@@ -11,7 +11,7 @@ A documentação está dividida nos seguintes módulos:
 | Documento | Descrição |
 |:----------|:----------|
 | [Requisitos Funcionais](./Requisitos-funcionais.md) | O que o sistema deve fazer (Regras de Negócio). |
-| [Requisitos Não-Funcionais](./Requisitos-não-funcionais.md) | Restrições técnicas (Performance, Segurança, Stack). |
+| [Requisitos Não Funcionais](./Requisitos-não-funcionais.md) | Restrições técnicas (Performance, Segurança, Stack). |
 | [Banco de Dados](./Banco-de-dados.md) | Diagramas ER e Dicionário de Dados. |
 | [Design & UI](./Design.md) | Protótipos e Guia de Estilo. |
 
