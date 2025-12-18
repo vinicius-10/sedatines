@@ -30,16 +30,17 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF007** | **CSS** | A interface deve ser construída utilizando o framework Tailwind CSS para agilidade e padronização. | Média |  |
 | **RNF008** | **Servidor web** | A aplicação deve ser servida via Nginx | Média |  |
 | **RNF009** | **Gerenciamento de dependencia** | As bibliotecas de backend devem ser gerenciadas via Composer e as de frontend via NPM. | Alta |  |
-| **Framework de Testes** | **Testes automatizados (Unitários e de Feature) devem ser escritos utilizando Pest PHP (padrão moderno do Laravel).** |  | Média |  |
+| **RNF010** |**Framework de Testes** | **Testes automatizados (Unitários e de Feature) devem ser escritos utilizando Pest PHP (padrão moderno do Laravel).** |  Média |  |
 
 ## 2. Usabilidade e Interface (UX/UI)
 
 | ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
 | :--: | :----: | :--------  | :--------: | :---------------------: |
-| **RNF006** | **Responsividade** | O layout deve ser responsivo, adaptando-se a dispositivos móveis (smartphones), tablets e desktops. | Alta |
-| **RNF007** | **Identidade Visual (Tema)** | O sistema deve utilizar uma paleta de cores escura ("Dark Mode") por padrão, alinhada à temática sobrenatural/terror. | Média |
-| **RNF008** | **Feedback de Sistema** | Toda ação do usuário (salvar, excluir, erro) deve gerar um feedback visual (Toasts ou Flash Messages) em menos de 1 segundo. | Alta |
-| **RNF009** | **Acessibilidade** | As imagens devem possuir atributos `alt` e os formulários devem seguir boas práticas de semântica HTML para leitores de tela. | Média |
+| **RNF011** | **Responsividade** | O layout deve ser responsivo, adaptando-se a dispositivos móveis (smartphones), tablets e desktops. | Alta | |
+| **RNF012** | **Identidade Visual (Tema)** | O sistema deve utilizar uma paleta de cores escura ("Dark Mode") por padrão. | Média | |
+| **RNF013** | **Troca de tema** | O sistema deve ter a capacidade de trocar de tema entre escuro e claro | Média |  |
+| **RNF008** | **Feedback de Sistema** | Toda ação do usuário (salvar, excluir, erro) deve gerar um feedback visual (Toasts ou Flash Messages) em menos de 1 segundo. | Alta | |
+| **RNF009** | **Acessibilidade** | As imagens devem possuir atributos `alt` e os formulários devem seguir boas práticas de semântica HTML para leitores de tela. | Média | |
 
 ## 3. Segurança e Confiabilidade
 
