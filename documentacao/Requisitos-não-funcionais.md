@@ -21,33 +21,38 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 
 ## 1. Tecnologias e Stack (Restrições de Implementação)
 
-| ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
-| :--: | :----: | :--------: | :--------: | :---------------------: |
-| **RNF001** | **Backend Framework** | O sistema deve ser desenvolvido em **PHP 8.4** utilizando o framework **Laravel 12**. | Alta | - | 
-| **RNF002** | **Banco de Dados** | O SGDB utilizado deve ser **MySQL 8.0**. | Crítica | - |
-| **RNF003** | **Ambiente de Desenvolvimento** | O projeto deve ser containerizado utilizando **Docker** (via Laravel Sail) para garantir paridade entre ambiente de dev e produção. | Alta | - |
-| **RNF004** | **Renderização do Frontend** | A estrutura das páginas deve ser renderizada no servidor (SSR) utilizando Blade Templates. | Alta | - |
-| **RFN005** | **Interaçoes do Frontend** | As ações de usuário (formulários, filtros, likes) devem ser processadas via JavaScript assíncrono (AJAX/Fetch) para evitar recarregamentos de página desnecessários. | Alta | - |
-| **RNF006** | **Controle de Versão** | O código deve ser versionado no Git, seguindo o fluxo de branches definido (Main/Develop). | Alta | - |
-| **RNF007** | **CSS** | A interface deve ser construída utilizando o framework Tailwind CSS para agilidade e padronização. | Média | - |
-| **RNF008** | **Servidor web** | A aplicação deve ser servida via Nginx | Média | - |
-| **RNF009** | **Gerenciamento de dependencia** | As bibliotecas de backend devem ser gerenciadas via Composer e as de frontend via NPM. | Alta | - |
-| **RNF010** |**Framework de Testes** | **Testes automatizados (Unitários e de Feature) devem ser escritos utilizando Pest PHP (padrão moderno do Laravel).** |  Média | - |
-
+| ID | Título | Descrição | Prioridade | Requisitos Relacionados |
+| :--: | :----: | :-------- | :--------: | :---------------------: |
+| **RNF001** | **Backend Framework** | O sistema deve ser desenvolvido em **PHP 8.4** utilizando o framework **Laravel 12**. | Alta | - |
+| **RNF002** | **Banco de Dados** | O SGDB deve ser **MySQL 8.0**, utilizando charset **utf8mb4** e collation `utf8mb4_unicode_ci` para suporte total a caracteres especiais. | Crítica | - |
+| **RNF003** | **Ambiente de Desenvolvimento** | O projeto deve ser containerizado utilizando **Docker** (via Laravel Sail) para garantir paridade entre dev e produção (SO Linux). | Alta | - |
+| **RNF004** | **Renderização do Frontend** | A estrutura das páginas deve ser renderizada no servidor (SSR) utilizando **Blade Templates**. | Alta | - |
+| **RNF005** | **Interações do Frontend** | As ações de usuário (formulários, filtros, likes) devem ser processadas via JavaScript assíncrono (AJAX/Fetch) para evitar recarregamentos. | Alta | - |
+| **RNF006** | **Controle de Versão** | O código deve ser versionado no Git, seguindo o padrão **Conventional Commits** nas mensagens de commit. | Alta | - |
+| **RNF007** | **CSS** | A interface deve ser construída utilizando o framework **Tailwind CSS** para agilidade e padronização. | Média | - |
+| **RNF008** | **Servidor Web** | A aplicação deve ser servida via **Nginx** (containerizado). | Média | - |
+| **RNF009** | **Gerenciamento de Dependências** | As bibliotecas devem ser gerenciadas via Composer/NPM com **Lock Files** (`composer.lock`) commitados obrigatoriamente para garantir integridade. | Crítica | - |
+| **RNF010** | **Framework de Testes** | Testes automatizados (Unitários e de Feature) devem ser escritos utilizando **Pest PHP**. | Média | - |
+| **RNF011** | **Gestão de Configuração** | Variáveis de ambiente sensíveis (senhas, chaves de API) devem ser geridas exclusivamente via arquivo `.env`, nunca hardcoded no código. | Crítica | RNF006 |
+| **RNF012** | **Padronização de Código** | O estilo de código deve seguir a norma **PSR-12**, validado automaticamente pela ferramenta **Laravel Pint**. | Alta | - |
+| **RNF013** | **Versionamento de Schema** | Toda alteração no banco de dados deve ser feita via **Migrations**. Dados iniciais e de teste devem ser inseridos via **Seeders**. | Crítica | RNF002 |
 
 ## 2. Usabilidade e Interface (UX/UI)
 
-| ID   | Título | Descrição | Prioridade | Requisitos Relacionados |
-| :--: | :---: | :-------- | :--------: | :---------------------: |
+| ID | Título | Descrição | Prioridade | Requisitos Relacionados |
+| :--: | :----: | :-------- | :--------: | :---------------------: |
 | **RNF011** | **Responsividade** | O layout deve ser fluido e adaptável (Responsive Web Design), garantindo usabilidade em Mobile, Tablet e Desktop. | Alta | - |
 | **RNF012** | **Identidade Visual (Tema)** | O sistema deve adotar o tema "Dark Mode" como padrão, alinhado à estética de terror/mistério do projeto. | Média | - |
-| **RNF013** | **Seletor de Tema** | O usuário deve ter a opção de alternar entre tema Escuro e Claro, e a preferência deve ser salva no navegador (LocalStorage). | Baixa | RNF012 |
-| **RNF014** | **Feedback de Sistema** | Ações de sucesso ou informativas devem exibir notificações não-bloqueantes (Toasts) que somem automaticamente. Erros críticos devem exibir Alertas/Modais. | Alta | RNF005 |
-| **RNF015** | **Acessibilidade Básica** | Imagens devem ter atributos `alt` e inputs devem ter `labels` associados para suporte básico a leitores de tela. | Média | - |
-| **RNF016** | **Indicadores de Carregamento** | Toda requisição assíncrona (AJAX) deve exibir um indicador visual de progresso (Spinner ou Skeleton) enquanto processa, para evitar sensação de travamento. | Alta | RNF005 |
-| **RNF017** | **Idioma da Interface** | Toda a interface pública e administrativa deve estar escrita em **Português do Brasil (PT-BR)**. | Alta | - |
-| **RNF018** | **Navegação Global** | Com exceção das páginas de Autenticação e Erro, todas as telas devem possuir uma barra de navegação (Menu) consistente. | Alta | - |
-| **RNF019** | **Hierarquia Visual** | Botões de ação primária (Ex: "Salvar", "Criar") devem ter destaque visual claro (cor/tamanho) sobre botões secundários (Ex: "Cancelar"). | Média | - |
+| **RNF013** | **Preferência de Tema Inteligente** | O sistema deve permitir alternar temas (Claro/Escuro), respeitando inicialmente a preferência do Sistema Operacional (`prefers-color-scheme`) e salvando a escolha manual no LocalStorage. | Baixa | RNF012 |
+| **RNF014** | **Feedback de Sistema** | Ações de sucesso devem exibir notificações flutuantes (Toasts). Erros críticos devem exibir Alertas/Modais. Ações destrutivas exigem confirmação explícita. | Alta | RNF005 |
+| **RNF015** | **Acessibilidade Aprimorada** | Além de atributos `alt` e `labels`, a interface deve garantir contraste mínimo (WCAG AA) e ser totalmente navegável via teclado (Focus States visíveis). | Média | - |
+| **RNF016** | **Indicadores de Carregamento** | Toda requisição assíncrona (AJAX) deve exibir um indicador visual (Spinner ou Skeleton) para evitar a sensação de travamento. | Alta | RNF005 |
+| **RNF017** | **Internacionalização (L10n)** | A interface deve estar em **Português do Brasil (PT-BR)**. Datas e moedas devem seguir o formato local (dd/mm/aaaa, R$). | Alta | - |
+| **RNF018** | **Navegação Global** | Com exceção das páginas de Auth/Erro, todas as telas devem possuir barra de navegação consistente e indicação clara da página ativa. | Alta | - |
+| **RNF019** | **Hierarquia Visual** | Botões de ação primária (Ex: "Salvar") devem ter destaque visual claro sobre secundários. O sistema deve prevenir "Layout Shift" (CLS) definindo dimensões para imagens. | Média | - |
+| **RNF048** | **Performance de Imagens** | Listagens de entidades devem implementar **Lazy Loading** (carregamento sob demanda) para imagens, economizando banda e acelerando o carregamento inicial. | Alta | RF022 |
+| **RNF049** | **Proteção contra Erros (Undo/Confirm)** | Ações irreversíveis (Exclusão) devem exigir confirmação dupla. Se possível, implementar "Undo" (Desfazer) para ações menores via Toast. | Alta | - |
+| **RNF050** | **Estados Vazios (Empty States)** | Quando uma listagem ou busca não retornar resultados, o sistema deve exibir uma ilustração ou mensagem amigável orientando o usuário, em vez de uma tela em branco. | Média | - |
 
 ## 3. Segurança e Proteção de Dados
 
