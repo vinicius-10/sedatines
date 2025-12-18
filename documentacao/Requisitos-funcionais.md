@@ -45,7 +45,7 @@ Funcionalidades para usuários autenticados (Membros da Comunidade).
 | **RF015** | **Validação de Cotas** | O sistema deve bloquear a criação se o usuário atingir o limite de entidades do seu Título. | RF003 | Alta | [ ] |
 | **RF016** | **Validação de Atributos** | O sistema deve impedir que a soma dos atributos ultrapasse o limite permitido pelo Título. | RF003 | Média | [ ] |
 | **RF017** | **Edição de Entidade** | O autor pode editar as suas próprias entidades. Em modo "Moderado", a edição reverte o status para `Pendente`. | - | Alta | [ ] |
-| **RF018** | **Upload de Mídia** | O sistema deve permitir envio de imagens, redimensionar e salvar de forma otimizada. | - | Alta | [ ] |
+| **RF018** | **Upload de Mídia** | O sistema deve permitir envio de uma ou mais imagens, redimensionar e salvar de forma otimizada. | - | Alta | [ ] |
 | **RF019** | **Clonar Entidade (Template)** | O criador pode escolher uma entidade existente como modelo base para uma nova ficha. | RF014 | Baixa | [ ] |
 | **RF020** | **Definir Relacionamentos** | O dono da entidade pode definir relacionamentos com outras entidades (Ex: "Inimigo de"). | - | Baixa | [ ] |
 | **RF021** | **Gestão de Contos** | CRUD de histórias/contos literários vinculados ao universo. | - | Baixa | [ ] |
