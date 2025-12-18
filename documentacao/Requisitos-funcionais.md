@@ -92,5 +92,5 @@ Regras de negócio automatizadas pelo sistema.
 
 ---
 
-## 🔗 Links Úteis
+## 📄 Documentação
 [Voltar para o Índice da Documentação](./documentacao.md)
