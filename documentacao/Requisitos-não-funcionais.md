@@ -17,7 +17,7 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 > *  **Baixa:** Melhoria contínua.
 
 ---
-<!-- | ** ** | ** ** | des | pri | RF0 | -->
+<!-- | **RNF0** | ** ** | des | pri | RF0 | -->
 
 ## 1. Tecnologias e Stack (Restrições de Implementação)
 
@@ -98,21 +98,18 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF046** | **Pipeline CI/CD** | O repositório deve conter um workflow do GitHub Actions que execute automaticamente os testes (RNF044) e a análise estática (RNF045) a cada Push ou Pull Request. | Alta | - |
 | **RNF047** | **Verificação de Segurança Automatizada** | O pipeline deve incluir verificação de dependências vulneráveis (via `composer audit`) e análise estática de segurança (procura por hardcoded secrets ou injeções óbvias). | Média | - |
 
-## 4. Desempenho
+## 6. Desempenho
 
 | ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
 | :--: | :----: | :--------  | :--------: | :---------------------: |
-| **RNF015** | **Otimização de Imagens** | Imagens enviadas pelos usuários devem ser convertidas e comprimidas (preferencialmente WebP) no servidor para reduzir o tempo de carregamento. | Alta |
-| **RNF016** | **Paginação** | Listagens que podem crescer indefinidamente (Entidades, Logs, Comentários) devem implementar paginação (máx 20 itens por página). | Alta |
-| **RNF017** | **Tempo de Resposta** | O tempo de carregamento das páginas não deve exceder 2 segundos em conexões 4G estáveis. | Média |
+| **RNF048** | **Otimização de Imagens** | Imagens enviadas devem ser processadas no servidor (Intervention Image) para redimensionamento e conversão para formatos leves (WebP) antes do armazenamento. | Alta | RNF023 | 
+| **RNF049** | **Paginação / Carregamento sob Demanda** | Listagens extensas (Entidades, Logs) devem implementar paginação no backend. No frontend, deve-se usar Infinite Scroll ou botão "Carregar Mais" para fluidez (Limitado a 50 itens/request). | Alta | RNF005 |
+| **RNF050** | **Tempo de Resposta** | O tempo de processamento do servidor (TTFB) deve ser inferior a 500ms, e o carregamento visual completo (LCP) não deve exceder 2 segundos em 4G. | Média |
+| **RNF051** | **Prevenção de N+1 (Eager Loading)** | Todas as consultas Eloquent que carregam relacionamentos (Ex: Listar Entidades + Autor) devem utilizar Eager Loading (with()) para evitar múltiplas consultas ao banco. | Alta |  |
+| **RNF052** | **Indexação de Banco de Dados** | Colunas utilizadas frequentemente em filtros, buscas (WHERE, LIKE) e ordenações (ORDER BY) devem possuir índices criados via Migration. | Alta | RF013 |
+| **RNF053** | **Cache de Dados** | Informações que mudam raramente (Configurações Globais, Lista de Categorias, Ranks) devem ser armazenadas em Cache (Redis ou File) para evitar consultas repetitivas. | Médio | - |
+| **RNF054** | **Minificação de Assets** | Em ambiente de produção, todos os arquivos CSS e JavaScript devem ser minificados e versionados (Cache Busting) automaticamente pelo processo de build (Vite). | ALta | - |
 
-## 5. Qualidade de Código e Documentação
-
-| ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
-| :--: | :----: | :--------  | :--------: | :---------------------: |
-| **RNF018** | **Padrão PSR-12** | O código PHP deve seguir a norma PSR-12 de estilo e formatação. | Alta |
-| **RNF019** | **Idioma do Código** | Variáveis, métodos e comentários de código devem ser escritos em **Inglês** (padrão de mercado). A documentação externa (MD) pode ser em Português. | Média |
-| **RNF020** | **Docs as Code** | A documentação de requisitos e banco de dados deve estar no repositório e ser atualizada junto com as features. | Alta |
 
 ---
 
