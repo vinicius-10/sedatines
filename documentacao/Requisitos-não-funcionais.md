@@ -46,7 +46,6 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF018** | **Navegação Global** | Com exceção das páginas de Autenticação e Erro, todas as telas devem possuir uma barra de navegação (Menu) consistente. | Alta | - |
 | **RNF019** | **Hierarquia Visual** | Botões de ação primária (Ex: "Salvar", "Criar") devem ter destaque visual claro (cor/tamanho) sobre botões secundários (Ex: "Cancelar"). | Média | - |
 
-
 ## 3. Segurança e Confiabilidade
 
 | ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
@@ -54,8 +53,9 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF020** | **Criptografia de Senhas** | Nenhuma senha deve ser armazenada em texto plano. Deve-se utilizar hash forte (Argon2). | Crítica |
 | **RNF021** | **Proteção CSRF** | Todos os formulários de escrita (POST/PUT/DELETE) devem conter tokens de proteção contra Cross-Site Request Forgery. | Crítica |
 | **RNF022** | **Sanitização (XSS)** | Todo input de usuário exibido em tela (comentários, lore) deve ser escapado para prevenir Cross-Site Scripting. | Crítica |
-| **RNF023** | **Validação de Uploads** | O sistema deve validar o tipo MIME (apenas jpg, png, webp) e o tamanho máximo (ex: 2MB) dos arquivos enviados para evitar execução de scripts maliciosos. | Crítica |
+| **RNF023** | **Validação de Uploads** | O sistema deve validar o tipo MIME (apenas JPEG/JPG, GIF, PNG, PSD, BMP, TIFF, SVG, WEBP e AVIF) e o tamanho máximo de 100MB cada dos arquivos enviados para evitar execução de scripts maliciosos. | Crítica |
 | **RNF024** | **Permissões (ACL)** | As rotas administrativas e de edição devem ser protegidas por Middlewares que verifiquem o Título e as permissões do usuário. | Crítica |
+ 
 
 ## 4. Desempenho
 
