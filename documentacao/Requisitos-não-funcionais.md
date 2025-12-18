@@ -3,19 +3,21 @@
 Este documento define as restrições técnicas, padrões de qualidade e exigências de infraestrutura do projeto.
 
 **Índice:**
-- [1. Tecnologis e Stack](#)
+- [1. Tecnologis](#)
+- []
 - [2. Usabilidade e Interface](#)
 - [3. Segurança e Dados](#)
 - [4. Desempenho e Confiabilidade](#4)
 - [5. Qualidade de Código e Documentação](#)
 
 > **Legenda de Prioridade:**
-> * **Alta:** O sistema não pode ser implantado sem isso.
+> * **Critica** O sistema não pode ser implantado sem isso. 
+> * **Alta:** O sistema precisa ter.
 > * **Média:** Necessário para uma boa experiência do usuário.
 > *  **Baixa:** Melhoria contínua.
 
 ---
-<!-- | ** ** | ** ** | des | pri | rf | -->
+<!-- | ** ** | ** ** | des | pri | RF0 | -->
 
 ## 1. Tecnologias e Stack (Restrições de Implementação)
 
@@ -32,6 +34,7 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF009** | **Gerenciamento de dependencia** | As bibliotecas de backend devem ser gerenciadas via Composer e as de frontend via NPM. | Alta | - |
 | **RNF010** |**Framework de Testes** | **Testes automatizados (Unitários e de Feature) devem ser escritos utilizando Pest PHP (padrão moderno do Laravel).** |  Média | - |
 
+
 ## 2. Usabilidade e Interface (UX/UI)
 
 | ID   | Título | Descrição | Prioridade | Requisitos Relacionados |
@@ -46,16 +49,49 @@ Este documento define as restrições técnicas, padrões de qualidade e exigên
 | **RNF018** | **Navegação Global** | Com exceção das páginas de Autenticação e Erro, todas as telas devem possuir uma barra de navegação (Menu) consistente. | Alta | - |
 | **RNF019** | **Hierarquia Visual** | Botões de ação primária (Ex: "Salvar", "Criar") devem ter destaque visual claro (cor/tamanho) sobre botões secundários (Ex: "Cancelar"). | Média | - |
 
-## 3. Segurança e Confiabilidade
+## 3. Segurança e Proteção de Dados
 
-| ID   | Título | Descrição  | Prioridade | Requisitos Relacionados |
-| :--: | :----: | :--------  | :--------: | :---------------------: |
-| **RNF020** | **Criptografia de Senhas** | Nenhuma senha deve ser armazenada em texto plano. Deve-se utilizar hash forte (Argon2). | Crítica |
-| **RNF021** | **Proteção CSRF** | Todos os formulários de escrita (POST/PUT/DELETE) devem conter tokens de proteção contra Cross-Site Request Forgery. | Crítica |
-| **RNF022** | **Sanitização (XSS)** | Todo input de usuário exibido em tela (comentários, lore) deve ser escapado para prevenir Cross-Site Scripting. | Crítica |
-| **RNF023** | **Validação de Uploads** | O sistema deve validar o tipo MIME (apenas JPEG/JPG, GIF, PNG, PSD, BMP, TIFF, SVG, WEBP e AVIF) e o tamanho máximo de 100MB cada dos arquivos enviados para evitar execução de scripts maliciosos. | Crítica |
-| **RNF024** | **Permissões (ACL)** | As rotas administrativas e de edição devem ser protegidas por Middlewares que verifiquem o Título e as permissões do usuário. | Crítica |
- 
+| ID | Título | Descrição | Prioridade | Requisitos Relacionados |
+| :--: | :----: | :-------- | :--------: | :---------------------: |
+| **RNF020** | **Criptografia de Senhas** | Nenhuma senha deve ser armazenada em texto plano. Deve-se utilizar hash forte (**Argon2id** ou Bcrypt). | Crítica | RF034 |
+| **RNF021** | **Proteção CSRF** | Todos os formulários de escrita (POST/PUT/DELETE) devem conter tokens de proteção contra Cross-Site Request Forgery. | Crítica | - |
+| **RNF022** | **Sanitização (XSS)** | Todo input de usuário exibido em tela (comentários, lore) deve ser sanitizado/escapado para prevenir injeção de scripts maliciosos. | Crítica | - |
+| **RNF023** | **Segurança de Uploads** | O sistema deve aceitar apenas formatos de imagem seguros (**JPEG, PNG, WEBP, AVIF**) com tamanho máximo de **5MB**. Arquivos executáveis ou vetoriais (SVG) devem ser rejeitados. | Crítica | RF018 |
+| **RNF024** | **Proteção de Rotas (Middleware)** | As rotas administrativas e restritas devem ser protegidas por Middlewares que validem a autenticação antes de carregar o controlador. | Crítica | RF047 |
+| **RNF025** | **Autorização de Ação (Policies)** | O sistema deve validar via Policies/Gates se o usuário tem permissão específica para o recurso alvo (Ex: "Usuário X pode editar o Post Y?"). | Crítica | RF047 |
+| **RNF026** | **Persistência de Login (Lembrar-me)** | O sistema deve gerenciar sessões estendidas (ex: 30 dias) via cookie seguro caso o usuário marque a opção "Lembrar-me" no login. | Média | RF033 |
+| **RNF027** | **Armazenamento de Sessão** | Tokens de autenticação devem ser armazenados exclusivamente em **Cookies HttpOnly/Secure**. É proibido o uso de LocalStorage para dados sensíveis. | Crítica | RF033 |
+| **RNF028** | **Identificação Pública (Obfuscação)** | As URLs públicas não devem expor o ID sequencial (PK) do banco. Deve-se utilizar **UUIDs** ou **Slugs** únicos para prevenir enumeração de dados. | Alta | RF025, RF039 |
+| **RNF029** | **Protocolo Seguro (HTTPS)** | Toda a comunicação entre cliente e servidor deve ser criptografada utilizando protocolo HTTPS (TLS 1.2+). | Crítica | - |
+| **RNF030** | **Rate Limiting (Throttling)** | As rotas de Login e API devem possuir limite de requisições por minuto para mitigar ataques de Força Bruta e DDoS. | Alta | RF033 |
+| **RNF031** | **Política de Senhas** | As senhas devem ter no mínimo 8 caracteres, exigindo a presença de letras e números (Alfanumérica). | Alta | RF034, RF025 |
+| **RNF032** | **Headers de Segurança** | O servidor deve responder com headers de segurança configurados: `X-Frame-Options`, `X-Content-Type-Options` e `HSTS`. | Alta | - |
+| **RNF033** | **Armazenamento de Uploads** | Arquivos enviados não devem manter o nome original. O sistema deve renomeá-los usando um Hash único (UUID/MD5) para evitar sobrescrita e execução maliciosa. | Alta | RF018 |
+| **RNF034** | **Sanitização de Logs** | Os logs do sistema (Laravel Logs) não devem registrar dados sensíveis como senhas em texto plano ou tokens de acesso. | Alta | RF041 |
+| **RNF035** | **Bloqueio por Tentativas** | Após 5 tentativas falhas de login consecutivas, o IP ou Usuário deve ser bloqueado temporariamente (Ex: 1 minuto) na camada de autenticação. | Alta | RF033 |
+
+
+## 4. Confiabilidade e Infraestrutura
+
+| ID | Título | Descrição | Prioridade | Requisitos Relacionados |
+| :--: | :----: | :-------- | :--------: | :---------------------: |
+| **RNF036** | **Rotina de Backup** | O sistema deve possuir uma rotina automatizada (Laravel Scheduler) para backup diário do banco de dados MySQL. | Alta | - |
+| **RNF037** | **Páginas de Erro Customizadas** | O sistema deve tratar exceções HTTP (404, 403, 500) apresentando páginas amigáveis dentro do tema visual, sem expor Stack Traces (debug) em produção. | Baixa | - |
+| **RNF038** | **Timeout de Requisições** | O servidor web (Nginx/PHP) deve ter um timeout configurado (ex: 60s) para evitar que processos travados consumam recursos indefinidamente. | Média | - |
+| **RNF039** | **Health Check Endpoint** | O sistema deve expor um endpoint `/up` (nativo do Laravel 11+) para monitoramento externo de uptime e saúde da conexão com o banco. | Média | - |
+
+## 5. Arquitetura e Qualidade de Código
+
+| ID | Título | Descrição | Prioridade | Requisitos Relacionados |
+| :--: | :----: | :-------- | :--------: | :---------------------: |
+| **RNF040** | **Padrão de Arquitetura (MVC)** | O projeto deve seguir estritamente o padrão MVC. A lógica de negócio complexa deve ser extraída dos Controllers para **Service Classes** ou **Actions**, mantendo os controladores "magros" (Skinny Controllers). | Crítica | - |
+| **RNF041** | **Validação Centralizada** | Toda validação de input deve ser feita através de **Form Requests** dedicados, proibindo validações manuais (`$request->validate`) dentro dos métodos do Controller. | Alta | - |
+| **RNF042** | **Tratamento Global de Exceções** | O sistema deve capturar exceções não tratadas via `ExceptionHandler` do Laravel, evitando "telas brancas" e registrando o erro nos logs antes de exibir uma mensagem amigável ao usuário. | Alta | - |
+| **RNF043** | **Padronização de Mensagens** | As mensagens de erro e sucesso (Flash Messages) devem seguir um padrão textual e visual consistente (Ex: "Objeto [Nome] criado com sucesso" / "Falha ao salvar: [Motivo]"). | Média | - |
+| **RNF044** | **Cobertura de Testes** | O código deve manter uma cobertura mínima de testes (Code Coverage) de **70%** nas camadas de Serviço e Modelos críticos, utilizando Pest PHP. | Alta | - |
+| **RNF045** | **Análise Estática (Linting)** | O código deve ser validado por ferramentas de análise estática (**Laravel Pint** para estilo PSR-12 e **PHPStan** nível 5 para erros lógicos) antes de qualquer merge. | Alta | - |
+| **RNF046** | **Pipeline CI/CD** | O repositório deve conter um workflow do GitHub Actions que execute automaticamente os testes (RNF044) e a análise estática (RNF045) a cada Push ou Pull Request. | Alta | - |
+| **RNF047** | **Verificação de Segurança Automatizada** | O pipeline deve incluir verificação de dependências vulneráveis (via `composer audit`) e análise estática de segurança (procura por hardcoded secrets ou injeções óbvias). | Média | - |
 
 ## 4. Desempenho
 
