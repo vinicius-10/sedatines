@@ -17,7 +17,7 @@
 - [Funcionalidades Planejadas](#-funcionalidades-planejadas)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Código](./aplicacao)
-- [Documetação](./documentacao/documentacao.md)
+- [Documetação](./documentacao/README.md)
 
 ---
 
