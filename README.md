@@ -4,9 +4,9 @@
 
 <div align="left">
   <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow" alt="Status">
-  <img src="https://img.shields.io/badge/Backend-Laravel_11-red" alt="Laravel">
+  <img src="https://img.shields.io/badge/Backend-Laravel_12-red" alt="Laravel">
   <img src="https://img.shields.io/badge/Infra-Docker-blue" alt="Docker">
-  <img src="https://img.shields.io/badge/Linguagem-PHP_8.2+-purple" alt="PHP">
+  <img src="https://img.shields.io/badge/Linguagem-PHP_8.4-purple" alt="PHP">
 </div>
 
 ## 📑 Sumário
