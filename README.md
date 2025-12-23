@@ -1,52 +1,63 @@
+# Sedatines Archives
 
-# Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+> Projeto desenvolvido para aplicação prática de Docker e Laravel.
 
-### Passo a passo
-Clone Repositório
-```sh
-git clone -b laravel-12-with-php8.4 https://github.com/especializati/setup-docker-laravel.git app-laravel
-```
-```sh
-cd app-laravel
-```
+<div align="left">
+  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow" alt="Status">
+  <img src="https://img.shields.io/badge/Backend-Laravel_12-red" alt="Laravel">
+  <img src="https://img.shields.io/badge/Infra-Docker-blue" alt="Docker">
+  <img src="https://img.shields.io/badge/Linguagem-PHP_8.4-purple" alt="PHP">
+</div>
 
-Suba os containers do projeto
-```sh
-docker-compose up -d
-```
+## 📑 Sumário
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Objetivo](#-objetivo)
+- [Público-Alvo](#-público-alvo)
+- [Entidades iniciais](#-entidades-iniciais)
+- [Funcionalidades Planejadas](#-funcionalidades-planejadas)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Código](./aplicacao)
+- [Documetação](./documentacao/README.md)
 
+---
 
-Crie o Arquivo .env
-```sh
-cp .env.example .env
-```
+## 👻 Sobre o Projeto
 
-Acesse o container app
-```sh
-docker-compose exec app bash
-```
+**Sedatines** é originalmente o nome do grupo de entidades sobrenaturais criado por mim e meus amigos. O universo gira em torno de três figuras centrais, mas expandiu-se para um ecossistema mais complexo.
 
+Esta aplicação web foi projetada para ser a fonte oficial da verdade (Single Source of Truth) sobre este universo, detalhando histórias, imagens e atributos de combate.
 
-Instale as dependências do projeto
-```sh
-composer install
-```
+## 🎯 Objetivo
 
-Gere a key do projeto Laravel
-```sh
-php artisan key:generate
-```
+O objetivo principal é catalogar, preservar e exibir as criaturas deste universo. O sistema atua em duas frentes:
+1. **Vitrine Pública:** Para leitores e interessados na história.
+2. **Ferramenta de Gestão:** Para os criadores manterem a consistência do mundo e realizarem o balanceamento das habilidades das entidades.
 
-OPCIONAL: Gere o banco SQLite (caso não use o banco MySQL)
-```sh
-touch database/database.sqlite
-```
+## 👥 Público-Alvo
 
-Rodar as migrations
-```sh
-php artisan migrate
-```
+* **Criadores de Conteúdo (Lore Masters):** Nós, que trabalhamos na expansão deste universo.
+* **Comunidade:** Leitores ou jogadores interessados em criar suas próprias entidades (OCs) dentro das regras do universo dos Sedatines.
 
-Acesse o projeto
-[http://localhost:8000](http://localhost:8000)
+## 💀 Entidades iniciais
+
+O sistema foi fundado baseando-se nas três entidades originais:
+1. **Kai Demon Red**
+2. **The Shadow**
+3. **Myrron Run**
+
+## 🚀 Funcionalidades Planejadas
+
+- [ ] **Catálogo de Criaturas:** Listagem visual com filtros.
+- [ ] **Sistema de Atributos:** Exibição de status como Força, Agilidade, etc.
+- [ ] **Lore Detalhada:** Páginas dedicadas à história de cada ser.
+- [ ] **Painel Administrativo:** Para criação e edição de novas entidades.
+
+## 🛠 Tecnologias Utilizadas
+
+Este projeto utiliza as seguintes tecnologias:
+
+* **Linguagem:** PHP 8.4
+* **Framework:** Laravel 12
+* **Ambiente:** Docker (Sail) & WSL2
+* **Banco de Dados:** MySQL
+* **Frontend:** Blade Templates
