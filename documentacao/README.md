@@ -2,7 +2,7 @@
 
 Bem-vindo à central de documentação do Sedatines. Aqui estão detalhadas as regras de negócio, requisitos e decisões técnicas que guiam o desenvolvimento deste projeto.
 
-> Esta pasta contém a especificação técnica. Para ver o código-fonte ou o guia de instalação, volte para a [Raiz do Projeto](../README.md).
+> Esta pasta contém a especificação técnica. Para ver o código-fonte ou o guia de instalação.
 
 ## 🗂 Estrutura da Documentação
 
