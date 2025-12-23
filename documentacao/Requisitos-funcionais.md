@@ -16,7 +16,7 @@ Este documento lista todas as funcionalidades que o sistema deve possuir para at
 > * **Baixa:** Desejável, funcionalidade extra.
 
 ---
-
+<!-- | **RF** | ** ** | des | rel | pri | [ ] | -->
 ## 1. Módulo Administrativo (Dashboard)
 
 Funcionalidades exclusivas para usuários com a flag `is_admin`.
@@ -43,25 +43,26 @@ Funcionalidades para usuários autenticados (Membros da Comunidade).
 
 | ID | Título | Descrição | Req. Relacionado | Prioridade | Status |
 |:---|:-------|:----------|:-----------------|:-----------|:-------|
-| **RF101** | **Cadastro de Entidade** | Criar uma nova entidade. O status inicial depende do RF001. | RF001 | Alta | [ ] |
-| **RF102** | **Validação de Cotas** | Bloquear criação ao atingir limite do Título. | RF003 | Alta | [ ] |
-| **RF103** | **Validação de Atributos** | Impedir ultrapassar limite de atributos do Título. | RF003 | Média | [ ] |
-| **RF104** | **Edição de Entidade** | Editar entidades próprias; pode voltar a `Pendente`. | - | Alta | [ ] |
-| **RF105** | **Upload de Mídia** | Envio e otimização de imagens. | - | Alta | [ ] |
-| **RF106** | **Clonar Entidade** | Criar entidade a partir de um template. | RF101 | Baixa | [ ] |
-| **RF107** | **Definir Relacionamentos** | Definir relacionamentos entre entidades. | - | Baixa | [ ] |
-| **RF108** | **Gestão de Contos** | CRUD de histórias/contos. | - | Baixa | [ ] |
-| **RF109** | **Vínculo de Personagens** | Vincular entidades a contos. | RF108 | Baixa | [ ] |
-| **RF110** | **Criação da História do Mundo** | Criar capítulos da Lore Global. | RF003 | Baixa | [ ] |
-| **RF111** | **Edição da História do Mundo** | Editar capítulos existentes da Lore Global. | RF110 | Baixa | [ ] |
-| **RF112** | **Gestão de Perfil** | Atualizar senha, foto, bio e email. | - | Alta | [ ] |
-| **RF113** | **Exclusão de Conta** | Solicitar exclusão da conta e dados pessoais. | - | Baixa | [ ] |
-| **RF114** | **Favoritar Entidade** | Adicionar entidades aos favoritos. | - | Baixa | [ ] |
-| **RF115** | **Comentar em Entidade** | Comentar na página de uma entidade. | - | Baixa | [ ] |
-| **RF116** | **Responder Comentário** | Responder comentários (thread). | RF115 | Baixa | [ ] |
-| **RF117** | **Identificação do Dono** | Destacar dono da entidade nos comentários. | RF115 | Baixa | [ ] |
-| **RF118** | **Marcação de Spoiler** | Marcar partes do texto como spoiler. | - | Média | [ ] |
-| **RF119** | **Visualizar Spoiler** | Revelar conteúdo oculto. | RF118 | Média | [ ] |
+| **RF101** | **Gestão de Entidade** | Permitir o CRUD (Criar, Ler, Atualizar, Excluir) de entidades. O status inicial é definido pelas regras do RF001. | RF001 | Alta | [ ] |
+| **RF102** | **Validação de Cotas** | Bloquear a criação de novas entidades caso o usuário atinja o limite permitido pelo seu Título/Nível. | RF003 | Alta | [ ] |
+| **RF103** | **Validação de Atributos** | Validar e impedir que os atributos da entidade ultrapassem os limites definidos pelo Título/Nível do usuário. | RF003 | Média | [ ] |
+| **RF104** | **Edição de Entidade** | Permitir edição de entidades próprias. Se o sistema estiver em modo "Moderação", a edição reverte o status para `Pendente`. | - | Alta | [ ] |
+| **RF105** | **Upload de Mídia** | Permitir o envio (upload) de imagens para compor a galeria ou avatar de uma entidade. | - | Média | [ ] |
+| **RF106** | **Clonar Entidade** | Permitir a criação de uma nova entidade baseada nos dados de uma existente (duplicação). | RF101 | Baixa | [ ] |
+| **RF107** | **Definir Relacionamentos** | Permitir estabelecer vínculos ou conexões entre diferentes entidades. | - | Baixa | [ ] |
+| **RF108** | **Gestão de Contos (Entidade)** | CRUD de histórias específicas da entidade, organizadas por capítulos. | - | Baixa | [ ] |
+| **RF109** | **Vínculo de Personagens** | Permitir associar entidades (personagens) participantes dentro dos contos. | RF108 | Baixa | [ ] |
+| **RF110** | **Nomes Alternativos** | Permitir cadastrar múltiplos nomes, apelidos ou pseudônimos para uma mesma entidade. | RF101 | Média | [ ] |
+| **RF111** | **Gestão de Lore/Mundo** | CRUD da história geral do mundo, dividida em capítulos (conforme permissão do Título do usuário). | - | Baixa | [ ] |
+| **RF112** | **Gestão de Perfil** | Permitir ao usuário atualizar suas informações cadastrais e de perfil. | - | Alta | [ ] |
+| **RF113** | **Exclusão de Conta** | Permitir ao usuário solicitar a exclusão permanente de sua conta e dados pessoais. | - | Baixa | [ ] |
+| **RF114** | **Favoritar Entidade** | Permitir adicionar entidades de outros usuários a uma lista de favoritos. | - | Baixa | [ ] |
+| **RF115** | **Comentar em Entidade** | Permitir a publicação de comentários na página de uma entidade. | - | Baixa | [ ] |
+| **RF116** | **Responder Comentário** | Permitir responder a comentários existentes, criando uma discussão encadeada (thread). | RF115 | Baixa | [ ] |
+| **RF117** | **Identificação do Dono** | Destacar visualmente os comentários feitos pelo criador (dono) da entidade. | RF115 | Baixa | [ ] |
+| **RF118** | **Marcação de Spoiler** | Permitir que o autor do comentário oculte trechos do texto marcando-os como spoiler. | - | Média | [ ] |
+| **RF119** | **Visualizar Spoiler** | Permitir revelar o conteúdo oculto por spoiler mediante interação do usuário. | RF118 | Média | [ ] |
+| **RF120** | **Títulos da Entidade** | Permitir atribuir múltiplos títulos honoríficos ou cargos a uma entidade. | RF101 | Média | [ ] |
 
 ## 3. Módulo Público (Visitante & Navegação)
 
@@ -69,28 +70,28 @@ Funcionalidades acessíveis a qualquer pessoa (autenticada ou não).
 
 | ID | Título | Descrição | Req. Relacionado | Prioridade | Status |
 |:---|:-------|:----------|:-----------------|:-----------|:-------|
-| **RF201** | **Autenticação** | Login via Email/User e Senha. | - | Alta | [ ] |
-| **RF202** | **Cadastro** | Cadastro de novos usuários com validação. | - | Alta | [ ] |
-| **RF203** | **Recuperar Acesso** | Redefinição de senha via email. | - | Alta | [ ] |
-| **RF204** | **Galeria de Entidades** | Listagem de entidades publicadas com paginação. | - | Alta | [ ] |
-| **RF205** | **Denunciar Conteúdo** | Denunciar entidades ou comentários ofensivos. | RF010 | Média | [ ] |
-| **RF206** | **Filtros e Pesquisa** | Pesquisa por nome, categoria, autor e rank. | - | Média | [ ] |
-| **RF207** | **Visualização Detalhada** | Página completa da entidade. | - | Alta | [ ] |
-| **RF208** | **Linha do Tempo (Lore)** | Visualizar a História do Mundo. | RF110 | Baixa | [ ] |
+| **RF201** | **Autenticação** | Realizar login no sistema utilizando E-mail e Senha. | - | Alta | [ ] |
+| **RF202** | **Cadastro de Usuário** | Registrar novos usuários no sistema, com validação de dados obrigatórios. | - | Alta | [ ] |
+| **RF203** | **Recuperação de Senha** | Permitir a redefinição de senha através de confirmação por e-mail. | - | Alta | [ ] |
+| **RF204** | **Galeria de Entidades** | Listar todas as entidades publicadas (públicas), com suporte a paginação. | - | Alta | [ ] |
+| **RF205** | **Denúncia de Conteúdo** | Permitir que usuários denunciem entidades ou comentários ofensivos/inadequados. | RF010 | Média | [ ] |
+| **RF206** | **Busca e Filtros** | Pesquisar e filtrar entidades por nome, categoria, autor e classificação (rank). | - | Média | [ ] |
+| **RF207** | **Detalhes da Entidade** | Exibir a página completa contendo todas as informações públicas de uma entidade. | - | Alta | [ ] |
+| **RF208** | **Visualização de Lore** | Exibir a "História do Mundo" (Lore) e cronologias disponíveis para leitura. | RF111 | Baixa | [ ] |
 
 ## 4. Requisitos de Sistema (Backend)
 
-Regras de negócio automatizadas pelo sistema.
+Regras de negócio automatizadas e processos de fundo do sistema.
 
 | ID | Título | Descrição | Req. Relacionado | Prioridade | Status |
 |:---|:-------|:----------|:-----------------|:-----------|:-------|
-| **RF301** | **Log de Auditoria** | Registrar ações críticas com IP e timestamp. | - | Baixa | [ ] |
-| **RF302** | **Atribuição Inicial** | Atribuir título padrão ao cadastrar usuário. | RF006 | Alta | [ ] |
-| **RF303** | **Sistema de Notificação (Email)** | Envio de emails transacionais. | - | Média | [ ] |
-| **RF304** | **Unicidade de Usuário** | Garantir unicidade de usuário e email. | RF202 | Alta | [ ] |
-| **RF345** | **Notificações Internas** | Alertas internos no dashboard. | - | Média | [ ] |
-| **RF306** | **Validação de Email** | Confirmação obrigatória de email. | RF202, RF112 | Alta | [ ] |
-| **RF307** | **Controle de Autorização** | Validação de permissões por Título/flags. | - | Alta | [ ] |
-
+| **RF301** | **Log de Auditoria** | Registrar automaticamente ações críticas do sistema, armazenando o IP de origem e o Timestamp. | - | Baixa | [ ] |
+| **RF302** | **Atribuição Inicial** | Atribuir automaticamente o Título/Nível padrão ao finalizar o cadastro de um novo usuário. | RF006 | Alta | [ ] |
+| **RF303** | **Envio de E-mails** | Gerenciar o envio de e-mails transacionais (recuperação de senha, boas-vindas, validação). | - | Média | [ ] |
+| **RF304** | **Unicidade de Dados** | Validar e garantir a unicidade dos campos "Nome de Usuário" e "E-mail" no banco de dados. | RF202 | Alta | [ ] |
+| **RF305** | **Notificações Internas** | Gerar e persistir alertas internos para serem exibidos no dashboard do usuário. | - | Média | [ ] |
+| **RF306** | **Validação de E-mail** | Bloquear recursos específicos até que a verificação do e-mail seja concluída (Token/Link). | RF202, RF112 | Alta | [ ] |
+| **RF307** | **Controle de Acesso** | Interceptar requisições (Middleware) para validar permissões baseadas no Título ou Flags do usuário. | - | Alta | [ ] |
+| **RF308** | **Processamento de Imagens** | Otimizar, converter e renomear (com hash único) as imagens enviadas antes do armazenamento definitivo. | RF105 | Média | [ ] |
 ---
 
