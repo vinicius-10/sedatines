@@ -63,6 +63,7 @@ Funcionalidades para usuários autenticados (Membros da Comunidade).
 | **RF118** | **Marcação de Spoiler** | Permitir que o autor do comentário oculte trechos do texto marcando-os como spoiler. | - | Média | [ ] |
 | **RF119** | **Visualizar Spoiler** | Permitir revelar o conteúdo oculto por spoiler mediante interação do usuário. | RF118 | Média | [ ] |
 | **RF120** | **Títulos da Entidade** | Permitir atribuir múltiplos títulos honoríficos ou cargos a uma entidade. | RF101 | Média | [ ] |
+| **RF121** | **Filiação** | Permitir a escolha de entidades para pai e mãe, com link para a página de cada uma, ou alternativamente permitir apenas a inserção do nome. | - | Média | [ ] |
 
 ## 3. Módulo Público (Visitante & Navegação)
 
