@@ -1,16 +1,13 @@
 ### Tabela: Usuários (users)
 Armazena os dados de login e perfil.
 
-
-
 ```mermaid
 erDiagram
-    USER ||--|| POST : "escreve"
+    USER ||--o{ POST : "escreve"
     USER {
         int id PK
         string username
         string email
-        "[Público-Alvo](#-público-alvo)" string
     }
     POST {
         int id PK
@@ -19,6 +16,7 @@ erDiagram
         int user_id FK
     }
 ```
+
 
 ## 👥 Público-Alvo
 | Coluna | Tipo | PK/FK? | Obrigatório? | Descrição |
