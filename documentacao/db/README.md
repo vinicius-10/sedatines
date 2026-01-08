@@ -12,7 +12,7 @@ Armazena os dados de login e perfil.
 
 ```mermaid
 erDiagram
-    USER ||--o{ POST : "escreve"
+    USER Zero or one Zero or one POST : "escreve"
     USER {
         int id PK
         string username
