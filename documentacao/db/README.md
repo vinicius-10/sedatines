@@ -10,7 +10,7 @@ erDiagram
         int id PK
         string username
         string email
-        [Público-Alvo](#-público-alvo)
+        [Público-Alvo](#-público-alvo) string
     }
     POST {
         int id PK
