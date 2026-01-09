@@ -1,6 +1,18 @@
-### Tabela: Usuários (users)
-Armazena os dados de login e perfil.
+## Banco de dados
 
+## 📑 Sumário
+- [MER](#-Modelo-entidade-relacionamento)
+- [Dicionario de dados user](#-)
+- [Dicionario de dados ](#-)
+- [Dicionario de dados ](#-)
+- [Dicionario de dados ](#-)
+- [Dicionario de dados ](#-)
+- [Dicionario de dados ](#-)
+- [Documetação](../README.md)
+
+---
+
+## Modelo entidade relacionamento
 ```mermaid
 erDiagram
     USER ||--o{ POST : "escreve"
