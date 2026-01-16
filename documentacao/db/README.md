@@ -61,8 +61,8 @@ erDiagram
         string email "Unique, Index"
         string password
         string avatar_path
-        boolean deleted_at nullable
-        timestamp email_verified_at nullable
+        boolean deleted_at "nullable"
+        timestamp email_verified_at "nullable"
         timestamp created_at
         timestamp updated_at
     }
@@ -72,7 +72,7 @@ erDiagram
         bigInt user_id FK
         int admin_id
         text reason
-        timestamp expires_at nullable
+        timestamp expires_at "nullable"
         timestamp created_at
         timestamp updated_at
     }
