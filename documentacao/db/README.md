@@ -44,7 +44,7 @@ erDiagram
     users ||--|{ reports : "reporta"
 
     ranks {
-        "big int" id PK
+        bigInt id PK
         string rank
         string slug "Unique"
         int max_entity
@@ -55,8 +55,8 @@ erDiagram
     }
 
     users {
-        "big int" id PK
-        "big int" ranks_id FK
+        bigInt id PK
+        bigInt ranks_id FK
         string name
         string email "Unique, Index"
         string password
@@ -68,8 +68,8 @@ erDiagram
     }
 
     user_bans{
-        "big int" id PK
-        "big int" user_id FK
+        bigInt id PK
+        bigInt user_id FK
         int admin_id
         text reason
         timestap expires_at nullable
@@ -78,9 +78,9 @@ erDiagram
     }
 
     entities {
-        "big int" id PK
-        "big int" user_id
-        "big int" category_id
+        bigInt id PK
+        bigInt user_id
+        bigInt category_id
         string name
         string slug "Unique, Index"
         text description
