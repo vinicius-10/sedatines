@@ -29,14 +29,14 @@ erDiagram
     categories ||--|{ entities : "classifica"
     users ||--|{ comments : "escreve"
     users ||--|{ audit_logs : "causa"
-    users ||--o{user_bans : "banida"
+    users ||--o{ user_bans : "banida"
     
     entities ||--o{ comments : "recebe (polimorfico)"
     world_events ||--o{ comments : "recebe (polimorfico)"
     
     entities }|--|{ entities : "relaciona (pivot: entity_relationships)"
     users }|--|{ entities : "favorita (pivot: favorites)"
-    entities }o--|| entity_image : "posui"
+    entities }o--|| entity_image : "possui"
     
     users ||--|{ world_events : "escreve"
     users ||--|{ stories : "escreve"
@@ -50,8 +50,8 @@ erDiagram
         int max_entity
         int max_attributes
         json permissions
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     users {
@@ -67,7 +67,7 @@ erDiagram
         timestamp updated_at
     }
 
-    user_bans{
+    user_bans {
         bigInt id PK
         bigInt user_id FK
         int admin_id
@@ -115,7 +115,7 @@ erDiagram
         bigInt  user_id
         morph commentable_type "Entity ou WorldEvent"
         bigint commentable_id
-        "big int" parent_id "Para threads"
+        bigint parent_id "Para threads"
         text content
         boolean is_spoiler
         timestamp deleted_at
