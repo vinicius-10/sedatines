@@ -12,6 +12,15 @@
 
 ---
 
+<!-- 
+
+|o	o|	0/1
+||	||	1/1
+}o	o{	0/n
+}|	|{	1/n
+
+-->
+
 ## Modelo entidade relacionamento
 ```mermaid
 erDiagram
@@ -33,7 +42,7 @@ erDiagram
     users ||--|{ reports : "reporta"
 
     titles {
-        bigint id PK
+        int 🗝️id PK
         string name
         string slug "Unique"
         int max_entities
