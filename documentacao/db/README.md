@@ -29,13 +29,14 @@ erDiagram
     categories ||--|{ entities : "classifica"
     users ||--|{ comments : "escreve"
     users ||--|{ audit_logs : "causa"
-    users }o --|| user_bans : "banned"
+    users ||--o{user_bans : "banida"
     
     entities ||--o{ comments : "recebe (polimorfico)"
     world_events ||--o{ comments : "recebe (polimorfico)"
     
     entities }|--|{ entities : "relaciona (pivot: entity_relationships)"
     users }|--|{ entities : "favorita (pivot: favorites)"
+    entities }o--|| entity_image : "posui"
     
     users ||--|{ world_events : "escreve"
     users ||--|{ stories : "escreve"
@@ -43,7 +44,7 @@ erDiagram
     users ||--|{ reports : "reporta"
 
     ranks {
-        int id PK
+        "big int" id PK
         string rank
         string slug "Unique"
         int max_entity
@@ -54,8 +55,8 @@ erDiagram
     }
 
     users {
-        int id PK
-        int ranks_id FK
+        "big int" id PK
+        "big int" ranks_id FK
         string name
         string email "Unique, Index"
         string password
@@ -67,8 +68,8 @@ erDiagram
     }
 
     user_bans{
-        int id PK
-        int user_id FK
+        "big int" id PK
+        "big int" user_id FK
         int admin_id
         text reason
         timestap expires_at nullable
@@ -77,35 +78,44 @@ erDiagram
     }
 
     entities {
-        bigint id PK
-        foreign_key user_id
-        foreign_key category_id
+        "big int" id PK
+        "big int" user_id
+        "big int" category_id
         string name
         string slug "Unique, Index"
-        text lore
-        string image_path
-        json stats "{força: 10, ...}"
+        text description
+        json stats 
         enum status "draft, pending, published, rejected, hidden"
         timestamp deleted_at "SoftDelete"
         timestap created_at
         timestap updated_at
     }
 
+    entity_image {
+        "Big int" id PK
+        "Big int" entity_id FK
+        string image_path
+        string alt_text
+        int order
+        timestap created_at
+        timestap updated_at
+    }
+
     entity_relationships {
-        bigint id PK
-        foreign_key from_entity_id
-        foreign_key to_entity_id
+        "big int" id PK
+        "big int" from_entity_id
+        "big int" to_entity_id
         string type "Ex: inimigo, irmão"
         timestap created_at
         timestap updated_at
     }
 
     comments {
-        bigint id PK
-        foreign_key user_id
+        "big int" id PK
+        "big int"  user_id
         morph commentable_type "Entity ou WorldEvent"
         bigint commentable_id
-        foreign_key parent_id "Para threads"
+        "big int" parent_id "Para threads"
         text content
         boolean is_spoiler
         timestamp deleted_at
@@ -114,8 +124,8 @@ erDiagram
     }
 
     audit_logs {
-        bigint id PK
-        foreign_key user_id "Quem fez"
+        "big int" id PK
+        "big int" user_id "Quem fez"
         string action "Ex: delete_entity"
         json old_values
         json new_values
