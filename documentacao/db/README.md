@@ -24,11 +24,12 @@
 ## Modelo entidade relacionamento
 ```mermaid
 erDiagram
-    titles ||--|{ users : "define permissoes"
+    ranks ||--|{ users : "define permissoes"
     users ||--|{ entities : "cria (dono)"
     categories ||--|{ entities : "classifica"
     users ||--|{ comments : "escreve"
     users ||--|{ audit_logs : "causa"
+    users }o --|| user_bans : "banned"
     
     entities ||--o{ comments : "recebe (polimorfico)"
     world_events ||--o{ comments : "recebe (polimorfico)"
@@ -41,26 +42,38 @@ erDiagram
     stories }|--|{ entities : "menciona (pivot: story_entity)"
     users ||--|{ reports : "reporta"
 
-    titles {
-        int 🗝️id PK
-        string name
+    ranks {
+        int id PK
+        string rank
         string slug "Unique"
-        int max_entities
-        int max_stats_points
-        json permissions "ACL"
+        int max_entity
+        int max_attributes
+        json permissions
+        timestap created_at
+        timestap updated_at
     }
 
     users {
-        bigint id PK
-        foreign_key title_id
+        int id PK
+        int ranks_id FK
         string name
         string email "Unique, Index"
         string password
-        string bio
         string avatar_path
-        timestamp email_verified_at
-        boolean is_banned "Default: false"
-        timestamp last_login_at
+        boolean deleted_at nullable
+        timestamp email_verified_at nullable
+        timestap created_at
+        timestap updated_at
+    }
+
+    user_bans{
+        int id PK
+        int user_id FK
+        int admin_id
+        text reason
+        timestap expires_at nullable
+        timestap created_at
+        timestap updated_at
     }
 
     entities {
@@ -74,6 +87,8 @@ erDiagram
         json stats "{força: 10, ...}"
         enum status "draft, pending, published, rejected, hidden"
         timestamp deleted_at "SoftDelete"
+        timestap created_at
+        timestap updated_at
     }
 
     entity_relationships {
@@ -81,6 +96,8 @@ erDiagram
         foreign_key from_entity_id
         foreign_key to_entity_id
         string type "Ex: inimigo, irmão"
+        timestap created_at
+        timestap updated_at
     }
 
     comments {
@@ -92,6 +109,8 @@ erDiagram
         text content
         boolean is_spoiler
         timestamp deleted_at
+        timestap created_at
+        timestap updated_at
     }
 
     audit_logs {
@@ -101,6 +120,8 @@ erDiagram
         json old_values
         json new_values
         string ip_address
+        timestap created_at
+        timestap updated_at
     }
 ```
 
