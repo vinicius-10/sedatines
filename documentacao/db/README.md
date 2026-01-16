@@ -63,8 +63,8 @@ erDiagram
         string avatar_path
         boolean deleted_at nullable
         timestamp email_verified_at nullable
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     user_bans{
@@ -72,9 +72,9 @@ erDiagram
         bigInt user_id FK
         int admin_id
         text reason
-        timestap expires_at nullable
-        timestap created_at
-        timestap updated_at
+        timestamp expires_at nullable
+        timestamp created_at
+        timestamp updated_at
     }
 
     entities {
@@ -87,8 +87,8 @@ erDiagram
         json stats 
         enum status "draft, pending, published, rejected, hidden"
         timestamp deleted_at "SoftDelete"
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     entity_image {
@@ -97,8 +97,8 @@ erDiagram
         string image_path
         string alt_text
         int order
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     entity_relationships {
@@ -106,8 +106,8 @@ erDiagram
         bigInt from_entity_id
         bigInt to_entity_id
         string type "Ex: inimigo, irmão"
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     comments {
@@ -119,8 +119,8 @@ erDiagram
         text content
         boolean is_spoiler
         timestamp deleted_at
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 
     audit_logs {
@@ -130,8 +130,8 @@ erDiagram
         json old_values
         json new_values
         string ip_address
-        timestap created_at
-        timestap updated_at
+        timestamp created_at
+        timestamp updated_at
     }
 ```
 
