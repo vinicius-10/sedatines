@@ -92,8 +92,8 @@ erDiagram
     }
 
     entity_image {
-        "Big int" id PK
-        "Big int" entity_id FK
+        bigInt id PK
+        bigInt entity_id FK
         string image_path
         string alt_text
         int order
@@ -102,17 +102,17 @@ erDiagram
     }
 
     entity_relationships {
-        "big int" id PK
-        "big int" from_entity_id
-        "big int" to_entity_id
+        bigInt id PK
+        bigInt from_entity_id
+        bigInt to_entity_id
         string type "Ex: inimigo, irmão"
         timestap created_at
         timestap updated_at
     }
 
     comments {
-        "big int" id PK
-        "big int"  user_id
+        bigInt id PK
+        bigInt  user_id
         morph commentable_type "Entity ou WorldEvent"
         bigint commentable_id
         "big int" parent_id "Para threads"
@@ -124,8 +124,8 @@ erDiagram
     }
 
     audit_logs {
-        "big int" id PK
-        "big int" user_id "Quem fez"
+        bigInt id PK
+        bigInt user_id "Quem fez"
         string action "Ex: delete_entity"
         json old_values
         json new_values
