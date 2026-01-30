@@ -57,21 +57,22 @@ erDiagram
     users {
         bigInt id PK
         bigInt ranks_id FK
+        boolean enable
         string name
         string email "Unique, Index"
         string password
         string avatar_path
-        boolean deleted_at "nullable"
         timestamp email_verified_at "nullable"
         timestamp created_at
         timestamp updated_at
     }
 
-    user_bans {
+    user_disable {
         bigInt id PK
-        bigInt user_id FK
-        int admin_id
+        bigInt user_disable_id FK
+        bigInt user_adm_id FK "nullable"
         text reason
+        boolean disable
         timestamp expires_at "nullable"
         timestamp created_at
         timestamp updated_at
@@ -80,6 +81,7 @@ erDiagram
     entities {
         bigInt id PK
         bigInt user_id
+        boolean enable
         bigInt category_id
         string name
         string slug "Unique, Index"
@@ -110,10 +112,19 @@ erDiagram
         timestamp updated_at
     }
 
+    restricted_entity{
+        bigInt id PK
+        bigInt entity_id FK
+        bigInt adm_id FK
+        text mensagem
+        timestamp created_at
+        timestamp updated_at
+    }
+
     comments {
         bigInt id PK
         bigInt  user_id
-        morph commentable_type "Entity ou WorldEvent"
+        morph commentable_type 
         bigint commentable_id
         bigint parent_id "Para threads"
         text content
@@ -133,6 +144,8 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
+
+    
 ```
 
 
